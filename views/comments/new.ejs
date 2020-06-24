@@ -1,0 +1,50 @@
+
+<!-- NEW COMMENT -->
+
+<%- include ('../partials/header.ejs') %>
+
+<div id="main_container">
+
+ 	<div id="container_left">
+		<div class="width_limiter_left">
+		<!-- includes the side menu with news categories -->	   
+		<%- include ('../partials/categories.ejs') %>
+		</div>
+	</div>	
+
+	<div id="container_center">
+	  <main>
+    <header class="paper_heading">
+      <h3>Leave your comment</h3>
+    </header>
+
+    <div class="form_container large_form">
+      <form id="new_comment" action="/articles/<%= article._id %>/comments" method="post">
+		<div class="form_design form_column">
+			<label for="the_comment">Your Comment: *</label>
+	        <textarea form="new_comment" id="the_comment" name="comment[text]" maxlength="450" placeholder="Leave your comment.." required></textarea>
+			<label for="emotion">How do you feel about it: *</label>
+			<select id="emotion" name="comment[emotion]" required>
+				<option id="e_default" value="" selected="selected" hidden="hidden" >Pick your emotion</option>	
+				<option id="e_amazed" value="Amazed">Amazed</option>
+				<option id="e_happy" value="Happy">Happy</option>
+				<option id="e_neutral" value="Neutral">Neutral</option>
+				<option id="e_sad" value="Sad">Sad</option>
+				<option id="e_angry" value="Angry">Angry</option>
+		  </select>
+	  </div>
+      <input class="ok_btn" type="submit" value="COMMENT"/> 
+      </form>
+    </div>
+	</main>
+	</div>
+	
+	<div id="container_right">
+		<div class="width_limiter_right">
+		<!-- includes the HOT ratings -->
+		<%- include ('../partials/ratings.ejs') %>
+		</div>
+	</div>	
+</div>
+
+<%- include ('../partials/footer.ejs') %>

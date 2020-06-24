@@ -1,0 +1,104 @@
+
+<%- include ('../partials/header.ejs') %>
+
+ <div id="main_container">
+
+ 	<div id="container_left">
+		<div class="width_limiter_left">
+		<!-- includes the side menu with news categories -->	   
+		<%- include ('../partials/categories.ejs') %>
+		</div>
+	</div>	
+
+  <div id="container_center">
+	<main>
+	    <header class="paper_heading">
+      		<a class="arti_link" target="_blank" href="<%= article.url %>">
+			<h5><%= article.title %></h5>
+			</a>	
+    	</header>
+
+		<article id="full_article">
+			<div class="article_info">
+	        	<p class="sec"><%= article.category %> - <%= article.scope %></p>
+				<div class="isNews">
+					<form action="/articles/<%= article._id %>/isNews" method="POST">
+						<% if(currentUser && article.isNews.some(function(news){
+							return news.equals(currentUser._id);
+						})) { %>
+							<button class="isNews_btn">
+								<img class="isNews_icon" src="/isNews_ok.png" title="i changed my mind">	
+							</button>
+						<% } else { %>
+							<button class="isNews_btn">
+								<img class="isNews_icon" src="/isNews.png" title="This is important news!">
+							</button>
+						<% } %>						
+					</form>
+				</div>
+			</div>
+
+			<div class="article_body_L">
+				<% if(article.image === ""){ %>
+					<div></div>
+				<% } else { %>
+					<div class="art_img_container">
+						<img class="art_img" src="<%= article.image %>">
+					</div>
+				<% } %>	
+				<div>
+					<p><%= article.summary %></p>					
+				</div>	
+			</div>	
+				
+			<div class="article_stats">
+				<p>Tags: 
+					<% article.tags.forEach(function(tag){ %>
+						<%= article.tags %>
+					<% }); %>
+				</p>	
+				<p class="sec">Submitted by: <%= article.user.username %> - <%= moment(article.createdAt).fromNow() %></p>
+			</div>
+    	</article>
+
+		<div class="ui_container">
+			<!-- ***DEV: both the article creator and the Admin can manipulate the article -->
+			<% if(currentUser && article.user.id.equals(currentUser._id) || currentUser && currentUser.isAdmin){ %>
+				<form id="delete_art" action="/articles/<%= article._id %>?_method=DELETE" method="post"><input class="delete_btn" type="submit" value="DELETE" form="delete_art"></form>
+				<div id="edit_btn" class="semi_btn ui_btn"><a class="nav_link ui_link a_link" href="/articles/<%= article._id %>/edit">Edit</a></div>
+			<% } %>
+			<div id="comment_btn" class="semi_btn ui_btn"><a class="nav_link ui_link a_link" href="/articles/<%= article._id %>/comments/new">Comment</a></div>
+		</div>
+
+		<section id="the_comments">
+			<% article.comments.forEach(function(comment){ %>
+			<div class="comment_container">
+				<h6><%= comment.user.username %>: {<%= comment.emotion %>}</h6>
+				<p> <%= comment.text %>	</p>
+				<p class="sec"> <%= moment(comment.createdAt).fromNow() %></p>
+				<div class="ui_container">
+					<!-- *** DEV: both the comment owner and the admin can manipulate a comment -->
+					<% if(currentUser && comment.user.id.equals(currentUser._id) || currentUser && currentUser.isAdmin){ %>
+						<form id="delete_com" action="/articles/<%= article._id %>/comments/<%= comment._id %>?_method=DELETE" method="post"><input class="delete_btn" type="submit" value="DELETE" form="delete_com"></form>
+						<div id="edit_btn" class="semi_btn ui_btn"><a class="nav_link ui_link a_link" href="/articles/<%= article._id %>/comments/<%= comment._id %>/edit">Edit</a></div>
+					<% } %>
+				</div>
+			</div>	
+			<% }); %>
+		</section>
+  	</main>
+  		<div class="spacer"></div>
+		<!-- To the #top -->
+		<div id="to_top" class="semi_btn"><a class="nav_link top_link" href="#top">Top</a></div>
+  </div>
+	
+  <div id="container_right">
+	<div class="width_limiter_right">
+		<!-- includes the HOT ratings -->
+		<%- include ('../partials/ratings.ejs') %>
+	</div>
+  </div>	
+
+</div>
+
+<%- include ('../partials/footer.ejs') %>

@@ -1,0 +1,60 @@
+<%- include ('partials/header.ejs') %>
+
+<div id="main_container">
+
+ 	<div id="container_left">
+		<div class="width_limiter_left">
+		<!-- includes the side menu with news categories -->	   
+		<%- include ('partials/categories.ejs') %>
+		</div>
+	</div>	
+
+	<div id="container_center">
+		<main>
+			<header class="paper_heading">
+			  <h3>THE NEWS WE SHARE</h3>
+			</header>
+			<section class="normal">
+				<h4>Frequently Asked Questions</h4>
+				<ul class="summary">
+					<li>Are these real advertisments? </li>
+					<li class="answer">- NO, these are dummy ads showing randomly by script;</li>
+					<li>Why is the site so ugly? </li>
+					<li class="answer">- It's supposed to resemble an old newspaper in a modern coat;</li>
+					<li>Why is there so much nonsense on here?</li>
+					<li class="answer">- it's a user driven site, so don't look at me;</li>
+					<li>Are these really all the FAQs?</li>
+					<li class="answer">- Yes, other questions just aren't so frequent, and besides i'm no longer keeping tabs ;)</li>
+				</ul>	
+				<hr>
+				<br>
+				<h4>Privacy Statement</h4>
+				<p>No tracking, no tracing, no geo, no nothing, all privacy. Though do keep in mind the email you use is saved in the database.</p>
+
+				<h4>Cookie Policy</h4>
+				<p>No cookies, not even 3rd party, read the FAQ on the adverts above.</p>
+
+				<h4>Terms and Conditions</h4>
+				<p>This site is free to use, make accounts, post news, add comments. Do be informed that i may at any point delete users, remove
+				posts, or comments, or even take this site entirely offline without any notice or chance to recall or reinstate users or posts 
+				or comments (aka. use at your own risk). Obvious posts or comments for me to remove are the offensive ones... so please try and
+				keep the site cleanish, nice and friendly.</p>
+			</section>			
+		</main>
+
+		<div class="spacer"></div>
+		<!-- To the #top -->
+	 	<div id="to_top" class="semi_btn"><a class="nav_link top_link" href="#top">Top</a></div>
+	</div>
+	
+	<div id="container_right">
+		<div class="width_limiter_right">
+
+		<!-- includes the HOT ratings -->
+		<%- include ('partials/ratings.ejs') %>
+		</div>
+	</div>	
+
+</div>
+
+<%- include ('partials/footer.ejs') %>

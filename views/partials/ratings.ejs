@@ -1,0 +1,67 @@
+  <section id="logged_in">
+	<% if(!currentUser){ %>
+ 		<div>You are not logged in.</div>
+	<% } else { %>
+		<div>logged in as: <strong><%= currentUser.username %></strong></div>
+	<% } %>		
+  </section>
+
+  <section id="hot_news" class="rating">
+    <h2>Hot News</h2>
+    <ul class="hot_list">
+		
+		<% hotArticles.slice(0,5).forEach(function(hotArticle){ %>
+			<li class="hot_list">
+		  		<a class="hot_link" href="/articles/<%= hotArticle._id %>"> 
+		  			<%= hotArticle.title %>
+		  		</a>
+	 	 	</li>
+	 	<% }); %>
+		
+    </ul>
+  </section>
+		  
+  <section id="adv_box_1" class="adv_box">
+	  <p>Advert</p>
+  </section>
+
+  <section id="hot_emo" class="rating">
+    <h2>Hot Emotions</h2>
+      <ul class="hot_list">
+		  
+		<% hotEmotions.slice(0,5).forEach(function(hotEmotion){ %>
+			<li class="hot_list">
+		  		<a class="hot_link" href="/articles/<%= hotEmotion._id %>"> 
+		  			<%= hotEmotion.title %>
+		  		</a>
+	 	 	</li>
+	 	<% }); %>
+		  
+      </ul>
+  </section>
+
+	<section id="adv_box_2" class="adv_box">
+	  <p>Advert</p>
+	</section>
+		  
+  <section id="hot_disc" class="rating">
+    <h2>Hot Discussion</h2>
+      <ul class="hot_list">
+		  
+		<% hotDiscussions.slice(0,5).forEach(function(hotDiscussion){ %>
+			<li class="hot_list">
+		  		<a class="hot_link" href="/articles/<%= hotDiscussion._id %>"> 
+		  			<%= hotDiscussion.title %>
+		  		</a>
+	 	 	</li>
+	 	<% }); %>
+		  
+      </ul>
+  </section>
+
+
+  <section id="adv_box_3" class="adv_box">
+    <p>Advert</p>
+  </section>
+
+	<div class="spacer"></div>

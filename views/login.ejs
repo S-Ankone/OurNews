@@ -1,0 +1,45 @@
+<%- include ('partials/header.ejs') %>
+
+<div id="main_container">
+
+ 	<div id="container_left">
+		<div class="width_limiter_left">
+		<!-- includes the side menu with news categories -->	   
+		<%- include ('partials/categories.ejs') %>
+		</div>
+	</div>	
+
+	<div id="container_center">
+	  <main>
+	    <header class="paper_heading">
+    	  <h3>THE NEWS WE SHARE</h3>
+    	</header>
+		<div class="form_container small_form">
+			<form id="login" action="/login" method="POST">
+				<div class="form_design">
+					<h4>LOG IN</h4>
+					<label for="username">Username:</label>
+					<input id="username" type="text" name="username" minlength="2" placeholder="username"/>
+					<label for="password">Password:</label>
+					<input type="password" name="password" placeholder="password"/>
+					<a class="arti_link" title="this functionality doesn't work, just make a new account" href="#">I forgot my password.</a>
+		
+				</div>
+				<input class="ok_btn" type="submit" value="LOGIN"/>
+			</form>
+			<br>
+			<p><a class="arti_link" href="/register">Register if you are not a user.</a></p>
+		</div>
+	  </main>
+	</div>
+	
+	<div id="container_right">
+		<div class="width_limiter_right">
+		<!-- includes the HOT ratings -->
+		<%- include ('partials/ratings.ejs') %>
+		</div>
+	</div>	
+
+</div>
+
+<%- include ('partials/footer.ejs') %>

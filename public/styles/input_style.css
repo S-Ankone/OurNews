@@ -1,0 +1,176 @@
+div.form_container{
+	margin: 3rem auto;
+	text-align: right;
+}
+
+div.small_form{
+	width: 50%;
+	transition: width 1s;		
+}
+
+div.large_form{
+	width: 80%;
+}
+
+div.form_design{
+	padding: 5px;
+	border: 1px solid #999999;
+	border-radius: 3px;
+	margin-bottom: 1rem;
+	text-align: left;
+}
+
+div.form_column{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+img#info_icon{
+	width: 12px;
+	display: inline;
+}
+
+label{
+    font-family: Courier New, Times New Roman, Courier, Times, monospace;
+    font-weight: bold;
+	margin: 0.3rem;
+}
+
+input{
+	padding: 2px 5px;
+    margin: 0px 5px 10px 3px;
+    display: block;
+}
+
+input[type=text]{
+	width: 97%;
+	color: #000000;
+}
+
+input[type=email]{
+	width: 97%;	
+	color: #000000;
+}
+	
+input[type=password]{
+	width: 97%;	
+	color: #000000;
+}
+
+input[type=url]{
+	width: 97%;	
+	color: #000000;
+}
+
+textarea{
+    color: #000000;
+    margin: 0px 5px 10px 3px;    
+    padding: 5px;
+	width: 97%;
+	height: 150px;
+    resize: none;
+}
+
+select{
+    max-width: 250px;
+    padding: 2px;
+    margin: 0px 5px 10px 3px;
+}
+
+input[type=submit]{
+	width: 100px;
+    height: 3.5rem;
+    padding: 0.2rem 0.5rem;
+	font-weight: bold;
+    cursor: pointer;
+    border: 2px solid #cccccc;
+    margin: 0.3rem 0.3rem 0.3rem auto;
+	border-radius: 5px;
+}
+
+input[type=submit]:hover{
+    border: 2px solid;
+    border-top-color: #f2f2f2;
+    border-left-color: #e6e6e6;
+    border-right-color: #808080;
+    border-bottom-color: #666666;
+}
+
+.ok_btn{
+	color: #999999;	
+    background-color: #ccffcc;
+}
+
+.ok_btn:hover{
+	color: #000000;	
+    background-color: #00cc00;
+}
+
+.edit_btn{
+	color: #999999;	
+    background-color: #ffffcc;
+}
+
+.edit_btn:hover{
+	color: #000000;
+	background-color: #ffff66;
+}
+
+
+.delete_btn{
+	color: #999999;
+	background-color: #ffcccc;
+}
+
+.delete_btn:hover{
+	color: #000000;
+	background-color: #ff3333;
+ }
+
+
+/* 	******************************
+	*!* NON-FORM Buttons below ***
+	****************************** */
+
+div.ui_container{
+	border-bottom: 1px solid #999999;
+	display: flex;
+	justify-content: flex-end;
+	flex-direction: row;
+	flex-wrap: nowrap;
+}
+
+div.ui_btn{		 /* **DEV:  All ui_btn's are also semi_btn's !!! */
+	width: 100px;
+	margin: 0.3rem;
+	font-weight: bold;
+	text-transform: uppercase;
+	border: 2px solid #cccccc;
+	border-radius: 5px;
+}
+
+div.ui_btn:hover{
+	border-radius: 5px;	
+}
+
+a.ui_link:link{
+	padding: 0.9rem 1rem;
+}
+
+div#comment_btn{
+	background-color: #e7f8fe;
+}
+
+div#comment_btn:hover{
+	background-color: #09a8dc;
+}
+
+div#edit_btn{
+	background-color: #ffffcc;
+}
+
+div#edit_btn:hover{
+	background-color: #ffff66;
+}
+

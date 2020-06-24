@@ -1,0 +1,218 @@
+
+
+/* eXtraLarge screen changes 1500px and above*/
+@media only screen and (min-width: 1500px){
+	
+	article{
+		width: 33%;
+		transition: width 1s;
+	}
+	
+	div.small_form{
+		width: 40%;
+		transition: width 1s;			
+	}
+	
+}
+
+
+/* Large screen changes 1165xp and above */
+@media only screen and (min-width: 1165px){
+	
+/*	body {
+		background-color: green;
+	} */
+	
+	div#container_left {
+		transition: width 1s;
+	}
+
+	div#container_center {
+		transition: width 1s;
+		}
+
+	div#container_rightt{
+		transition: width 1s;
+		}
+
+}
+
+
+/*  Large screen changes and above */
+@media only screen and (max-width: 1164px){
+	
+/*	body{
+		background-color: blue;
+	} */
+
+	div#container_left {
+		width: 18%;
+		transition: width 1s;
+	}
+
+	div#container_center {
+		width: 52%;	
+		transition: width 1s;
+	}
+
+	div#container_rightt{
+		width: 30%;
+		transition: width 1s;		
+	}
+	
+	div#logo_top{
+		margin: 0px;
+		transition: margin-left 1s;
+	}
+
+	div.small_form{
+		width: 60%;
+		transition: width 1s;			
+	}
+	
+}
+
+
+@media only screen and (max-width: 960px){
+	
+/*	body{
+		background-color: pink;
+	} */
+	
+	div.small_form{
+		width: 75%;
+		transition: width 1s;			
+	}
+	
+}
+
+
+/* Medium screen changes and BELOW - Tablet & Old Monitors*/
+@media only screen and (max-width: 950px){
+	
+/*	body{
+		background-color: yellow;
+	} */
+	
+	header#header_top{
+		width: 80%;
+		transition: width 1s; 
+	}
+
+	div#container_left {
+		width: 20%;	
+		transition: width 1s;			
+		}
+
+	div#container_center {
+		width: 50%;	
+		transition: width 1s;			
+		}
+
+	div#container_rightt{
+		width: 30%;
+		transition: width 1s;			
+		}
+	
+	div#login{
+    	width: 55%;
+	}
+	
+	article{
+		width: 100%;
+		transition: width 1s;		
+	}
+	
+	div.article_body{
+		height: 80px;
+		transition: height 1s;
+	}
+	
+	div.small_form{
+		width: 85%;
+		transition: width 1s;			
+	}
+	
+}
+
+
+/* Small screen changes and BELOW - Mobile */
+@media only screen and (max-width: 650px){
+	
+/*	body{
+		background-color: orange;
+	} */ 
+	
+	header#header_top{
+		width: 90%;
+		transition: width 1s; 
+	}
+	
+	div#ham_menu{
+		display: block;
+	}
+	
+	nav#main_nav{
+		display: none;
+	}
+
+	section#logged_in{
+		display: none;
+	}
+	
+	div#container_left {
+		display: none;
+		transition: width 1s;	
+	}
+	
+	
+	div#container_center {
+		width: 95%;
+		transition: width 1s;
+		margin: auto;	
+	}
+
+	div#container_right{
+		width: 100%;
+		transition: width 1s;
+		}
+	
+	div.width_limiter_right{
+		width: 95%;
+		transition: width 1s;
+		margin: auto;
+	}
+
+	/* the Hamburger Menu */
+	section.news_categories{
+		width: 55%;
+	}
+	
+	section#sky_adv{
+		width: 45%;
+	}
+	
+	div.sub_links{
+		display: block;
+	}
+	
+	div.small_form{
+		width: 65%;
+		transition: width 1s;			
+	}
+	
+	div.bottom_links{
+		display: none;
+	}
+	
+}
+
+@media only screen and (max-width: 444px){
+	
+		div.small_form{
+		width: 75%;
+		transition: width 1s;			
+	}
+	
+}
+

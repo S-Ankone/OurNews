@@ -1,0 +1,38 @@
+
+<%- include ('../partials/header.ejs') %>
+
+  <div id="main_container">
+
+ 	<div id="container_left">
+		<div class="width_limiter_left">
+			<!-- includes the side menu with news categories -->	   
+			<%- include ('../partials/categories.ejs') %>
+		</div>
+	</div>	
+
+	<div id="container_center">
+		<main>
+			<header class="paper_heading">
+				<h3>WORLD NEWS WE SHARE</h3>
+			</header>
+			
+			<!-- all 'found' articles from the DB are listed in this div -->
+	    	<div class="article_list">
+				<%- include ('../partials/article_inc.ejs') %>
+ 			</div>
+		</main>
+		<div class="spacer"></div>
+		<!-- To the #top -->
+	 	<div id="to_top" class="semi_btn"><a class="nav_link top_link" href="#top">Top</a></div>
+	</div>
+	
+	<div id="container_right">
+		<div class="width_limiter_right">
+			<!-- includes the HOT ratings -->
+			<%- include ('../partials/ratings.ejs') %>
+		</div>
+	</div>	
+
+  </div>
+
+<%- include ('../partials/footer.ejs') %>

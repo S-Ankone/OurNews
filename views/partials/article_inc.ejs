@@ -1,0 +1,20 @@
+			<% articles.forEach(function(article){ %>
+			<article>
+				<header class="article_head">
+				  <a class="arti_link" target="_blank" href="<%= article.url %>">
+					<h4><%= article.title %></h4>
+				  </a>
+				  <div class="article_info">
+					<p class="sec"><%= article.scope %> - <%= article.category %></p>
+				  </div>
+				</header>
+				<div class="article_body">
+				  <!-- <img class="art_img" src="%= article.image %>"/> -->
+				  <p><%= article.summary.substring(0, 105) %>  
+					<a class="arti_link more" href="/articles/<%= article._id %>">..read more</a></p>
+				</div>	
+				<footer class="article_stats">
+					<p class="sec"><%= moment(article.createdAt).fromNow() %> - <a class="arti_link" href="/articles/<%= article._id %>">Comments</a>: <%= article.comments.length %></p>	
+				</footer>
+			</article>
+		  	<% }); %>

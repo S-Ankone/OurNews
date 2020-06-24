@@ -1,0 +1,54 @@
+
+<%- include ('partials/header.ejs') %>
+
+<div id="main_container">
+
+ 	<div id="container_left">
+		<div class="width_limiter_left">
+		<!-- includes the side menu with news categories -->	   
+		<%- include ('partials/categories.ejs') %>
+		</div>
+	</div>	
+
+	<div id="container_center">
+	  <main>
+	    <header class="paper_heading">
+    	  <h3>THE NEWS WE SHARE</h3>
+    	</header>
+   		<section class="normal">
+			<h4>About this site</h4>
+			<p>This site:</p>
+			<ul class="summary">
+				<li>is all about sharing, commenting and discussing the news;</li>
+				<li>was made as part of a webdev bootcamp;</li>
+				<li>isn't entirely serious everywhere;</li>
+				<li>may not be finished or pollished in every corner;</li>
+				<li>may not have all imaginable features integrated;</li>
+				<li>is currently no longer in development;</li>
+				<li>may be taken off-line at any point in time...</li>
+			</ul>
+			<hr>
+			<br>
+			<h4>Some credits are due towards:</h4>
+			<p><a href="https://www.webdesigndev.com/html5-ad-templates-high-ctr-designs/" target="_blank">webdesigndev.com/html5-ad-templates</a>
+				all-rights of the images used in the adverts belong to their respectful owners.	
+				I'm very grateful i could just rip them off of the internet and use them. You
+				can find the creators of these images on the page linked above. All credits to them!</p>
+			<p><a href="https://www.udemy.com" target="_blank">Udemy</a> - Instructors Colt Steele</p>
+   		</section>			
+	  </main>
+		<div class="spacer"></div>
+		<!-- To the #top -->
+	 	<div id="to_top" class="semi_btn"><a class="nav_link top_link" href="#top">Top</a></div>
+	</div>
+	
+	<div id="container_right">
+		<div class="width_limiter_right">
+		<!-- includes the HOT ratings -->
+		<%- include ('partials/ratings.ejs') %>
+		</div>
+	</div>	
+
+</div>
+
+<%- include ('partials/footer.ejs') %>

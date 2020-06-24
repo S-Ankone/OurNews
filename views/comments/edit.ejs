@@ -1,0 +1,67 @@
+<!-- *******************
+     ** EDIT COMMENTS **
+     ******************* -->
+
+<%- include ('../partials/header.ejs') %>
+
+<div id="main_container">
+
+ 	<div id="container_left">
+		<div class="width_limiter_left">
+		<!-- includes the side menu with news categories -->	   
+		<%- include ('../partials/categories.ejs') %>
+		</div>
+	</div>	
+
+	<div id="container_center">
+	  <main>
+    <header class="paper_heading">
+      <h3>Edit your comment</h3>
+    </header>
+		  
+    <div class="form_container large_form">
+      <form id="edit_comment" action="/articles/<%= article_id %>/comments/<%= comment._id %>?_method=PUT" method="post">
+		<div class="form_design form_column">	  
+		<label for="the_comment">Your Comment *</label>
+        <textarea form="edit_comment" id="the_comment" name="comment[text]" maxlength="450" placeholder="Leave your comment.." required><%= comment.text %></textarea>
+		<label for="emotion">How do you feel about it:</label>
+        <select id="emotion" name="comment[emotion]">
+			<option id="e_amazed" value="Amazed">Amazed</option>
+			<option id="e_happy" value="Happy">Happy</option>
+			<option id="e_neutral" value="Neutral">Neutral</option>
+			<option id="e_sad" value="Sad">Sad</option>
+			<option id="e_angry" value="Angry">Angry</option>
+      </select>
+	  </div>
+      <input class="ok_btn" type="submit" value="UPDATE"/> 
+      </form>
+    </div>
+	</main>
+	</div>
+	
+	<div id="container_right">
+		<div class="width_limiter_right">
+		<!-- includes the HOT ratings -->
+		<%- include ('../partials/ratings.ejs') %>
+		</div>
+	</div>	
+</div>
+
+<script>
+	/*	This code works...
+		let e_default = document.getElementById('e_default');
+		e_default.selected = false;  **note: not needed **
+		
+		let options = document.getElementsByTagName('option');
+					
+	  	for(i=0; i<options.length; i++){
+			if (options[i].value === "%= comment.emotion %>"){
+	  			options[i].selected = true;
+	  		}
+		} but, after consulting StackOverflow ! */ 
+		let selector = document.getElementById('emotion');
+		selector.value = "<%= comment.emotion %>";
+</script>
+
+
+<%- include ('../partials/footer.ejs') %>

@@ -1,0 +1,72 @@
+
+<%- include ('../partials/header.ejs') %>
+
+<div id="main_container">
+
+ 	<div id="container_left">
+		<div class="width_limiter_left">
+		<!-- includes the side menu with news categories -->	   
+		<%- include ('../partials/categories.ejs') %>
+		</div>
+	</div>	
+
+	<div id="container_center">
+		
+	<main>
+    <header class="paper_heading">
+      <h3>Create a new News Article</h3>
+    </header>
+
+    <div class="form_container large_form">
+      <form id="new_article" action="/articles" method="post">
+	  <div class="form_design form_column">
+        <label for="url">Link to the News: *</label>
+        <input type="url" id="url" name="url" placeholder="http(s)://www.the-url.ext/..." required/>
+        <label for="title">Title: *</label>
+        <input type="text" id="title" name="title" minlength="8" maxlength="55" placeholder="8 ~ 25 characters" required/>
+        <label for="image">Link to an Image:</label>        
+        <input type="url" id="image" name="image" placeholder="image url: http(s)://www.the-url.ext/../your_image.ext"/>
+        <label for="summary">Summary of the News: *</label>
+        <textarea form="new_article" id="summary" name="summary" minlength="10" maxlength="500" placeholder="10 ~ 500 characters" spellcheck="true" required></textarea>
+        <label for="scope">Scope for the article: *</label>
+        <select id="scope" name="scope" required>
+		  <option value="" selected="selected" hidden="hidden">Choose Scope</option>
+          <option value="local">Local</option>
+          <option value="country">Country</option>
+          <option value="continent">Continent</option>
+          <option value="world">World</option>
+      </select>
+	<label for="category">Category for the article: *</label>
+        <select id="category" name="category" required>
+		  <option value="" selected="selected" hidden="hidden">Choose Category</option>			
+          <option value="politics">Politics</option>
+          <option value="economy">Economy</option>
+          <option value="technology">Technology</option>
+          <option value="science">Science</option>
+          <option value="sports">Sports</option>
+          <option value="culture">Culture</option>
+          <option value="other">Other</option>
+      	</select>  
+        <label for="tags">Tags for the article:</label>
+        <input type="text" id="tags" name="tags" placeholder="comma seperated tags: tag1, tag2, tag3"/>
+	  </div>		  
+      <input class="ok_btn" type="submit" value="CREATE"/> 
+      </form>
+    </div>
+	</main>
+		<div class="spacer"></div>
+		<!-- To the #top -->
+	 	<div id="to_top" class="semi_btn"><a class="nav_link top_link" href="#top">Top</a></div>
+	</div>
+	
+	<div id="container_right">
+		<div class="width_limiter_right">
+
+		<!-- includes the HOT ratings -->
+		<%- include ('../partials/ratings.ejs') %>
+		</div>
+	</div>	
+
+</div>
+
+<%- include ('../partials/footer.ejs') %>

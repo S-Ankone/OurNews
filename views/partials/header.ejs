@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta lang="Eng"/> 
+    <meta charset="UTF-8"/> 
+    <meta name="robots" content="noindex nofollow"/>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" type="text/css" href="/default_style.css"/>
+    <link rel="stylesheet" type="text/css" href="/text_style.css"/>
+    <link rel="stylesheet" type="text/css" href="/input_style.css"/>
+	<link rel="stylesheet" type="text/css" href="/media_style.css"/>
+	  
+    <meta name="description" content="Fill in the description of this site"/> <!-- Description of this site -->
+    <meta name="keywords" content="Set, The, Keywords, For, This, Site"/>	<!-- Keywords associated with the content of this site -->
+    <title>Your NEWS site</title>
+  </head>
+  <body>
+    <div class="top_container fixed">
+      <header id="header_top">
+        <div id="logo_top">
+          <div id="brand_btn" class="semi_btn nav_btn"><a class="nav_link top_link" href="/"><h1>
+			  Front Page</h1></a></div>
+        </div>
+        <div id="ham_menu">				<!-- Hamburger Icon goes here -->
+          <div id="ham" class="semi_btn" onclick="document.location='/burger'">
+            <div class="ham_burger"></div>			
+            <div class="ham_burger"></div>
+            <div class="ham_burger"></div>
+          </div>
+        </div>
+        <nav id="main_nav">
+            <div class="semi_btn nav_btn"><a class="nav_link top_link" href="/faq">FAQ</a></div>
+            <div class="semi_btn nav_btn"><a class="nav_link top_link" href="/about">About</a></div>
+            <div class="semi_btn nav_btn"><a class="nav_link top_link" href="/contact">Contact</a></div>
+        </nav>
+        <div id="login">
+            <div id="newArt_btn" class="semi_btn nav_btn"><a id="mn_link" class="nav_link top_link" href="/articles/new"><h1>+ Add NEW News</h1></a></div>
+            
+			<% if(!currentUser){ %>
+				<div id="login_btn" class="semi_btn nav_btn"><a id="login_btn_link" class="nav_link top_link" href="/login">Log in</a></div>
+			<% } else { %>
+				<div id="logout_btn" class="semi_btn nav_btn"><a id="logout_btn_link" class="nav_link top_link" href="/logout">Log out</a></div>
+			<% } %>
+			
+         </div>
+      </header>
+    </div>
+
+<!-- topTag -->	
+<div id="top" class="tag"></div>	

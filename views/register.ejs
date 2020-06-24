@@ -1,0 +1,45 @@
+<%- include ('partials/header.ejs') %>
+
+<div id="main_container">
+
+ 	<div id="container_left">
+		<div class="width_limiter_left">
+		<!-- includes the side menu with news categories -->	   
+		<%- include ('partials/categories.ejs') %>
+		</div>
+	</div>	
+
+	<div id="container_center">
+	  <main>
+	    <header class="paper_heading">
+    	  <h3>THE NEWS WE SHARE</h3>
+    	</header>
+		<div class="form_container small_form">
+			<form id="register" action="/register" method="POST">
+				<div class="form_design">
+					<h4>REGISTER</h4>
+					<label for="email">Enter your email:</label>
+					<input type="email" id="email" name="email" placeholder="will be validated" required/>
+					<label for="username">Pick a username:</label>
+					<input id="username" type="text" name="username" minlength="2" maxlength="20" placeholder="2 ~ 20 characters" required/>
+					<label for="password">Construct a password:</label><img id="info_icon" src="info_icon.png" title="Info: password at least 9 characters long." alt="Info: password at least 8 characters long.">
+					<input type="password" name="password" minlength="9" max="35" placeholder="9 ~ 35 characters" required/>
+					<label for="agree_terms">Agree to the TermsOfUse</label>
+					<input type="checkbox" name="agree_terms" value="agreed_terms" required style="display: inline"/>
+				</div>
+				<input class="ok_btn" type="submit" value="REGISTER"/>	
+			</form>	
+		</div>
+	  </main>
+	</div>
+	
+	<div id="container_right">
+		<div class="width_limiter_right">
+		<!-- includes the HOT ratings -->
+		<%- include ('partials/ratings.ejs') %>
+		</div>
+	</div>	
+
+</div>
+
+<%- include ('partials/footer.ejs') %>
